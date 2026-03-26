@@ -9,6 +9,7 @@ A Python-based API testing project designed to demonstrate basic backend testing
 - Verify response data fields
 - Demonstrate basic API testing using Python
 - Structured tests using Python functions
+- Validate list responses from API endpoints
 
 ## Technologies Used
 - Python
