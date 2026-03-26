@@ -60,7 +60,8 @@ This project was built to:
 - Add more endpoints and edge cases  
 - Improve error handling  
 - Convert tests into automated test suite  
-- Integrate with testing frameworks  
+- Integrate with testing frameworks
+- Validate response data (e.g. checking fields like id and email)
 
 ---
 
