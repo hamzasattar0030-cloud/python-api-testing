@@ -1,21 +1,30 @@
 # Python API Testing Project
 
-A simple Python API testing project built to demonstrate basic understanding of backend testing, status code validation, and response data checking.
+A Python-based API testing project designed to demonstrate basic backend testing, status code validation, and response data verification.
 
-## Features
-- Sends GET requests to a public API
-- Checks valid and invalid endpoints
-- Validates status codes
-- Verifies response data fields
-- Demonstrates basic API testing using Python
+---
 
-## Technologies Used
+## 🚀 Features
+
+- Send API requests using Python
+- Validate status codes (200, 404)
+- Perform positive and negative testing
+- Verify response data fields
+- Structured test cases for API validation
+
+---
+
+## 🛠️ Technologies Used
+
 - Python
 - Requests library
-- JSONPlaceholder API
+- REST API (JSONPlaceholder)
 
-## How to Run
-1. Open terminal in the project folder
+---
+
+## ▶️ How to Run
+
+1. Open terminal in project folder  
 2. Install requests if needed:
 
 py -m pip install requests
@@ -24,11 +33,37 @@ py -m pip install requests
 
 py api_test.py
 
-## Test Coverage
-- Valid post request
-- Invalid post request
-- Valid user request
-- Response data validation
+---
 
-## Purpose
-This project was built to practise Python and demonstrate basic API testing skills relevant to junior QA and software engineering roles.
+## 🧪 Test Coverage
+
+- Valid API request (status 200)
+- Invalid API request (status 404)
+- Response data validation (checking fields like id and email)
+- API response structure validation
+
+---
+
+## 🧠 Purpose of This Project
+
+This project was built to:
+
+- Practise Python programming  
+- Learn API testing fundamentals  
+- Validate API responses using code  
+- Demonstrate backend testing skills  
+
+---
+
+## 📌 Future Improvements
+
+- Add more endpoints and edge cases  
+- Improve error handling  
+- Convert tests into automated test suite  
+- Integrate with testing frameworks  
+
+---
+
+## 👨‍💻 Author
+
+Hamza Sattar
