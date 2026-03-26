@@ -2,39 +2,35 @@ import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
-# Test 1: Valid post
-response = requests.get(f"{BASE_URL}/posts/1")
+def test_valid_post():
+    response = requests.get(f"{BASE_URL}/posts/1")
+    data = response.json()
 
-print("Test 1: Valid post")
-print("Status Code:", response.status_code)
+    if response.status_code == 200 and data["id"] == 1:
+        print("Test valid post: PASS")
+    else:
+        print("Test valid post: FAIL")
 
-data = response.json()
+def test_invalid_post():
+    response = requests.get(f"{BASE_URL}/posts/9999")
 
-if response.status_code == 200 and data["id"] == 1:
-    print("PASS\n")
-else:
-    print("FAIL\n")
+    if response.status_code == 404 or response.text == "{}":
+        print("Test invalid post: PASS")
+    else:
+        print("Test invalid post: FAIL")
 
-# Test 2: Invalid post
-response = requests.get(f"{BASE_URL}/posts/9999")
+def test_user_data():
+    response = requests.get(f"{BASE_URL}/users/1")
+    data = response.json()
 
-print("Test 2: Invalid post")
-print("Status Code:", response.status_code)
+    if response.status_code == 200 and "email" in data:
+        print("Test user data: PASS")
+    else:
+        print("Test user data: FAIL")
 
-if response.status_code == 404 or response.text == "{}":
-    print("PASS\n")
-else:
-    print("FAIL\n")
+def main():
+    test_valid_post()
+    test_invalid_post()
+    test_user_data()
 
-# Test 3: Check user data
-response = requests.get(f"{BASE_URL}/users/1")
-
-print("Test 3: User data check")
-print("Status Code:", response.status_code)
-
-data = response.json()
-
-if response.status_code == 200 and "email" in data:
-    print("PASS\n")
-else:
-    print("FAIL\n")
+main()
