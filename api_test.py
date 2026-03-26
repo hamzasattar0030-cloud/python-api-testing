@@ -2,57 +2,63 @@ import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
+# Test: Verify valid post returns correct data
 def test_valid_post():
     response = requests.get(f"{BASE_URL}/posts/1")
     data = response.json()
 
     if response.status_code == 200 and data["id"] == 1:
-        print("Test valid post: PASS")
+        print("[PASS] Valid post request")
     else:
-        print("Test valid post: FAIL")
+         print("[FAIL] Valid post request")
 
+# Test: Verify invalid post returns 404 or empty response
 def test_invalid_post():
     response = requests.get(f"{BASE_URL}/posts/9999")
 
     if response.status_code == 404 or response.text == "{}":
-        print("Test invalid post: PASS")
+        print("[PASS] Valid post request")
     else:
-        print("Test invalid post: FAIL")
+        print("[FAIL] Valid post request")
 
+# Test: Verify user endpoint returns expected data fields
 def test_user_data():
     response = requests.get(f"{BASE_URL}/users/1")
     data = response.json()
 
     if response.status_code == 200 and "email" in data:
-        print("Test user data: PASS")
+        print("[PASS] Valid post request"))
     else:
-        print("Test user data: FAIL")
+        print("[FAIL] Valid post request")
         
+# Test: Verify wrong endpoint returns 404 error
 def test_wrong_endpoint():
     response = requests.get(f"{BASE_URL}/wrongendpoint")
 
     if response.status_code == 404:
-        print("Test wrong endpoint: PASS")
+       print("[PASS] Valid post request")
     else:
-        print("Test wrong endpoint: FAIL")
+        print("[FAIL] Valid post request")
 
+# Test: Verify correct user name is returned
 def test_user_name():
     response = requests.get(f"{BASE_URL}/users/1")
     data = response.json()
 
     if response.status_code == 200 and data["name"] == "Leanne Graham":
-        print("Test user name: PASS")
+        print("[PASS] Valid post request")
     else:
-        print("Test user name: FAIL")
+        print("[FAIL] Valid post request")
 
+# Test: Verify posts endpoint returns a non-empty list
 def test_posts_list():
     response = requests.get(f"{BASE_URL}/posts")
     data = response.json()
 
     if response.status_code == 200 and isinstance(data, list) and len(data) > 0:
-        print("Test posts list: PASS")
+        print("[PASS] Valid post request")
     else:
-        print("Test posts list: FAIL")
+        print("[FAIL] Valid post request")
         
         
 
