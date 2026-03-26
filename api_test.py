@@ -44,6 +44,16 @@ def test_user_name():
         print("Test user name: PASS")
     else:
         print("Test user name: FAIL")
+
+def test_posts_list():
+    response = requests.get(f"{BASE_URL}/posts")
+    data = response.json()
+
+    if response.status_code == 200 and isinstance(data, list) and len(data) > 0:
+        print("Test posts list: PASS")
+    else:
+        print("Test posts list: FAIL")
+        
         
 
 def main():
@@ -52,5 +62,6 @@ def main():
     test_user_data()
     test_wrong_endpoint()
     test_user_name()
+    test_posts_list()
 
 main()

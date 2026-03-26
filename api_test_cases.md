@@ -35,3 +35,17 @@
 **Expected Result:**
 - Status code is 200
 - Response contains an email field
+
+---
+
+## TC007 - Verify posts list is returned
+**Endpoint:** /posts  
+**Method:** GET  
+
+**Steps:**
+1. Send GET request to /posts  
+
+**Expected Result:**
+- Status code is 200  
+- Response is a list  
+- List contains at least one item  
