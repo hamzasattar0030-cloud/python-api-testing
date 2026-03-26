@@ -8,6 +8,7 @@ A Python-based API testing project designed to demonstrate basic backend testing
 - Perform positive and negative testing
 - Verify response data fields
 - Demonstrate basic API testing using Python
+- Structured tests using Python functions
 
 ## Technologies Used
 - Python
